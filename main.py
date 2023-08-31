@@ -84,3 +84,8 @@ student.print_student_courses()
 average = student.get_student_average()
 print("Student Average Mark:", average)
 
+# TODO 8 declare empty students list
+students = []
+
+while True:
+

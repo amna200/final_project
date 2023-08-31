@@ -155,6 +155,7 @@ while True:
                 break
         if not student_found:
             print("Student Not Exist")
+
     # TODO 15 ask user to enter course name and course mark then create coures object then append it to target student courses
 
     elif selection == 5:
@@ -171,3 +172,9 @@ while True:
                 break
         if not student_found:
             print("Student Not Exist")
+
+    # TODO 16 call a function to exit the program
+
+    else:
+        print("Exiting...")
+        break

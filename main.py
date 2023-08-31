@@ -20,3 +20,6 @@ print("Course ID:", course.course_id)
 print("Course Name:", course.course_name)
 print("Course Mark:", course.course_mark)
 
+class Student:
+    # TODO 3 define static variable indicates total student count
+    total_students = 0

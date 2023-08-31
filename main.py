@@ -99,7 +99,16 @@ while True:
     except ValueError:
         print("Invalid selection. Please enter a valid number.")
 
+     # TODO 10 make sure that Student number is not exists before
 
-
+    if selection == 1:
+        student_number = input("Enter Student Number: ")
+        if any(student.student_number == student_number for student in students):
+            print("Student with this number already exists.")
+        else:
+            student_name = input("Enter Student Name: ")
+            student = Student(student_name, student_age, student_number)
+            students.append(student)
+            print("Student added!")
 
 

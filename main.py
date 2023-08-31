@@ -88,4 +88,18 @@ print("Student Average Mark:", average)
 students = []
 
 while True:
+    # TODO 9 handle Exception for selection input
+    try:
+        selection = int(input("1.Add New Student\n"
+                              "2.Delete Student\n"
+                              "3.Display Student\n"
+                              "4.Get Student Average\n"
+                              "5.Add Course to student with mark.\n"
+                              "6.Exit: "))
+    except ValueError:
+        print("Invalid selection. Please enter a valid number.")
+
+
+
+
 

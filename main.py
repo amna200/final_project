@@ -29,13 +29,23 @@ class Student:
     # student_age (user input)
     # student_number (user_input)
     # courses_list (List of Course Objects)
-    def __init__(self, student_name, student_age, student_number, courses_list):
+    def __init__(self, student_name, student_age, student_number, courses_list=None):
         self.student_id = uuid.uuid4()
         self.student_name = student_name
         self.student_age = student_age
         self.student_number = student_number
         self.courses_list = courses_list
+        self.courses_list = courses_list if courses_list is not None else []
         Student.total_students += 1
+
+    def enroll_course(self, course):
+        self.courses_list.append(course)
+
+    def get_student_details(self):
+        return self.__dict__
+
+    def get_student_courses(self):
+        return self.courses_list
 
 student_name = input("Enter student name: ")
 student_age = int(input("Enter student age: "))
@@ -46,4 +56,7 @@ print("Student name "+student_name)
 print("Student age "+str(student_age))
 print("Student number "+student_number)
 print("Total students:", Student.total_students)
+student.enroll_course(course)
+print("Student Details:", student.get_student_details())
+print("Student Courses:", student.get_student_courses())
 

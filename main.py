@@ -111,4 +111,19 @@ while True:
             students.append(student)
             print("Student added!")
 
+     # TODO 12 find the target student using loops and delete it if exist , if not print ("Student Not Exist")
 
+    elif selection == 2:
+        student_number = input("Enter Student Number to delete: ")
+
+        student_index = None
+        for i, student in enumerate(students):
+            if student.student_number == student_number:
+                student_index = i
+                break
+
+        if student_index is not None:
+            del students[student_index]
+            print("Student deleted successfully.")
+        else:
+            print("Student with this number not found.")

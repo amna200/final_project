@@ -47,6 +47,18 @@ class Student:
     def get_student_courses(self):
         return self.courses_list
 
+    def print_student_courses(self):
+        print("Student Courses:")
+        for course in self.courses_list:
+            print(f"Course: {course.course_name}, Mark: {course.course_mark}")
+
+    def get_student_average(self):
+        total_marks = sum(int(course.course_mark) for course in self.courses_list)
+        if self.courses_list:
+            return total_marks / len(self.courses_list)
+        else:
+            return 0
+
 student_name = input("Enter student name: ")
 student_age = int(input("Enter student age: "))
 student_number = input("Enter student number: ")
@@ -59,4 +71,16 @@ print("Total students:", Student.total_students)
 student.enroll_course(course)
 print("Student Details:", student.get_student_details())
 print("Student Courses:", student.get_student_courses())
+course1_name = input("Enter course 1 name: ")
+course1_mark = input("Enter course 1 mark: ")
+course1 = Course(course1_name, course1_mark)
+student.enroll_course(course1)
+course2_name = input("Enter course 2 name: ")
+course2_mark = input("Enter course 2 mark: ")
+course2 = Course(course2_name, course2_mark)
+student.enroll_course(course2)
+
+student.print_student_courses()
+average = student.get_student_average()
+print("Student Average Mark:", average)
 

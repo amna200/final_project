@@ -127,3 +127,17 @@ while True:
             print("Student deleted successfully.")
         else:
             print("Student with this number not found.")
+
+     # TODO 13 find the target student using loops and print student detials  if exist , if not print ("Student Not Exist")
+
+    elif selection == 3:
+        student_number = input("Enter Student Number: ")
+
+        student_found = False
+        for student in students:
+            if student.student_number == student_number:
+                print("Student Details:", student.get_student_details())
+                student_found = True
+                break
+        if not student_found:
+            print("Student Not Exist")
